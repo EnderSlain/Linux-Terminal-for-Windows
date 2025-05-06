@@ -5,7 +5,7 @@ use crate::command_manager::CommandManager;
 use std::io::{self, Write};
 use whoami;
 use colored::*;
-
+use std::env;
 
 fn main() {
 
@@ -15,8 +15,11 @@ fn main() {
 
         let username = whoami::username();
         let hostname = whoami::hostname();
+        
+        let current_dir = env::current_dir().unwrap_or_default();
+        let dir_name = current_dir.file_name().unwrap_or_default().to_str().unwrap_or_default();
 
-        let prompt = format!("{}@{}:~$ ", username.red(), hostname.red());
+        let prompt = format!("{}@{}:~/{}~$ ", username.truecolor(97, 255, 0), hostname.truecolor(97, 255, 0), dir_name.truecolor(0, 140, 255));
 
         print!("{}", prompt);
         io::stdout().flush().unwrap();
@@ -28,6 +31,5 @@ fn main() {
         }
 
         manager.execute(&input);
-
     }
 }

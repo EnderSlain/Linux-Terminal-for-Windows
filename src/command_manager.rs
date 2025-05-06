@@ -12,7 +12,8 @@ impl CommandManager {
         commands.insert("exit", Box::new(commands::exit::Exit));
         commands.insert("neofetch", Box::new(commands::neofetch::Neofetch));
         commands.insert("fastfetch", Box::new(commands::neofetch::Neofetch));
-        commands.insert("ls", Box::new(commands::ls::Ls));    
+        commands.insert("ls", Box::new(commands::ls::Ls));
+        commands.insert("cd",Box::new(commands::cd::Cd));   
 
         CommandManager { commands }
 
