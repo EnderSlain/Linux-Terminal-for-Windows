@@ -1,0 +1,9 @@
+[package]
+name = "Linux_Terminal"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+whoami = "1.6.0"
+colored ="3.0.0"
+terminal_size = "0.4.2"
