@@ -10,7 +10,7 @@ impl Command for Clear {
 
     fn execute(&self, _args: &[&str]) {
         print!("\x1B[3J\x1B[2J\x1B[H");
-
+        print!("\x1B[3J\x1B[2J\x1B[H");
         std::io::stdout().flush().unwrap();
     }
 }
